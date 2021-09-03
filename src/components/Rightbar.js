@@ -12,14 +12,119 @@ export default function Rightbar() {
             <b>Morenike</b> and <b>4 other friends</b> have a birthday today
           </span>
         </BirthdayContainer>
-        <img src='/assets/kingsley_photo.jpg' alt='' className='rightBarAd' />
-        <h4 className='rightBarTitle'>Online friends</h4>
-        <ul className='friendList'>
-            <li className='friend'>
-                <div className='friendImgContainer'>
-                    <img src='' alt='' />
-                </div>
-            </li>
+        <img src="/assets/kingsley_photo.jpg" alt="" className="rightBarAd" />
+        <h4 className="rightBarTitle">Online friends</h4>
+        <ul className="friendList">
+          <li className="friend">
+            <div className="friendImgContainer">
+              <img
+                src="/assets/kingsley_photo.jpg"
+                alt=""
+                className="friendProfileImg"
+              />
+              <span className="online"></span>
+            </div>
+            <span className='friendUsername'>John Carter</span>
+          </li>
+          <li className="friend">
+            <div className="friendImgContainer">
+              <img
+                src="/assets/kingsley_photo.jpg"
+                alt=""
+                className="friendProfileImg"
+              />
+              <span className="online"></span>
+            </div>
+            <span className='friendUsername'>John Carter</span>
+          </li>
+          <li className="friend">
+            <div className="friendImgContainer">
+              <img
+                src="/assets/kingsley_photo.jpg"
+                alt=""
+                className="friendProfileImg"
+              />
+              <span className="online"></span>
+            </div>
+            <span className='friendUsername'>John Carter</span>
+          </li>
+          <li className="friend">
+            <div className="friendImgContainer">
+              <img
+                src="/assets/kingsley_photo.jpg"
+                alt=""
+                className="friendProfileImg"
+              />
+              <span className="online"></span>
+            </div>
+            <span className='friendUsername'>John Carter</span>
+          </li>
+          <li className="friend">
+            <div className="friendImgContainer">
+              <img
+                src="/assets/kingsley_photo.jpg"
+                alt=""
+                className="friendProfileImg"
+              />
+              <span className="online"></span>
+            </div>
+            <span className='friendUsername'>John Carter</span>
+          </li>
+          <li className="friend">
+            <div className="friendImgContainer">
+              <img
+                src="/assets/kingsley_photo.jpg"
+                alt=""
+                className="friendProfileImg"
+              />
+              <span className="online"></span>
+            </div>
+            <span className='friendUsername'>John Carter</span>
+          </li>
+          <li className="friend">
+            <div className="friendImgContainer">
+              <img
+                src="/assets/kingsley_photo.jpg"
+                alt=""
+                className="friendProfileImg"
+              />
+              <span className="online"></span>
+            </div>
+            <span className='friendUsername'>John Carter</span>
+          </li>
+          <li className="friend">
+            <div className="friendImgContainer">
+              <img
+                src="/assets/kingsley_photo.jpg"
+                alt=""
+                className="friendProfileImg"
+              />
+              <span className="online"></span>
+            </div>
+            <span className='friendUsername'>John Carter</span>
+          </li>
+          <li className="friend">
+            <div className="friendImgContainer">
+              <img
+                src="/assets/kingsley_photo.jpg"
+                alt=""
+                className="friendProfileImg"
+              />
+              <span className="online"></span>
+            </div>
+            <span className='friendUsername'>John Carter</span>
+          </li>
+          <li className="friend">
+            <div className="friendImgContainer">
+              <img
+                src="/assets/kingsley_photo.jpg"
+                alt=""
+                className="friendProfileImg"
+              />
+              <span className="online"></span>
+            </div>
+            <span className='friendUsername'>John Carter</span>
+          </li>
         </ul>
       </RightbarContainer>
     </Wrapper>
@@ -32,9 +137,45 @@ const Wrapper = styled.div`
 const RightbarContainer = styled.div`
   padding: 20px 20px 0 0;
   .rightBarAd {
-      width: 100%;
-      border-radius: 10px;
-      margin: 30px 0;
+    width: 100%;
+    border-radius: 10px;
+    margin: 30px 0;
+  }
+  .rightBarTitle {
+    margin-bottom: 20px;
+  }
+  .friendList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .friend {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    .friendUsername {
+      font-weight: bold;
+    }
+  }
+  .friendImgContainer {
+    margin-right: 10px;
+    position: relative;
+  }
+  .friendProfileImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .online {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: limegreen;
+    position: absolute;
+    top: -2px;
+    right: 0;
+    border: 2px solid white;
   }
 `;
 const BirthdayContainer = styled.div`
