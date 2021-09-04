@@ -4,7 +4,7 @@ import styled from 'styled-components/macro';
 import { Users } from '../dummyData';
 import Online from './Online';
 
-export default function Rightbar({user}) {
+export default function Rightbar({profile}) {
   return (
     <Wrapper>
       <RightbarContainer>
