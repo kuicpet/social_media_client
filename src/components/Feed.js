@@ -1,20 +1,17 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import Posts from './Posts';
+import Post from './Posts';
 import Share from './Share';
+import { Posts } from '../dummyData';
 
 export default function Feed() {
   return (
     <Wrapper>
       <FeedContainer>
         <Share />
-        <Posts />
-        <Posts />
-        <Posts />
-        <Posts />
-        <Posts />
-        <Posts />
-        <Posts />
+        {Posts.map((post) => (
+          <Post key={post.id} post={post} />
+        ))}
       </FeedContainer>
     </Wrapper>
   );

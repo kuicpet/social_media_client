@@ -1,41 +1,50 @@
 import { Favorite, MoreVert, ThumbUp } from '@material-ui/icons';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Users } from '../dummyData';
 
-export default function Posts() {
+export default function Posts({ post }) {
+  const [like, setLike] = useState(post.like);
+  const [isliked, setIsLiked] = useState(false);
+  const likeHandler = () => {
+    setLike(isliked ? like - 1 : like + 1);
+    setIsLiked(!isliked)
+  };
   return (
     <Wrapper>
       <PostContainer>
         <PostTop>
           <div className="topLeft">
             <img
-              src="/assets/kingsley_photo.jpg"
+              src={Users.filter((u) => u.id === post?.userId)[0].profilePicture}
               alt=""
               className="postProfileImg"
             />
-            <span className="postUsername">Kingsley Umujeyan</span>
-            <span className="postDate">5 min ago</span>
+            <span className="postUsername">
+              {Users.filter((u) => u.id === post?.userId)[0].username}
+            </span>
+            <span className="postDate">{post.date}</span>
           </div>
           <div className="topRight">
             <MoreVert />
           </div>
         </PostTop>
         <PostCenter>
-          <span className="postText">Hey! its my first post</span>
-          <img src="/assets/kingsley_photo.jpg" alt="" className="postImg" />
+          <span className="postText">{post?.desc}</span>
+          <img src={post.photo} alt="" className="postImg" />
         </PostCenter>
         <PostBottom>
           <div className="bottomLeft">
             <div className="likeContainer">
-              <ThumbUp className="likeIcon" />
+              <ThumbUp className="likeIcon" onClick={likeHandler} />
             </div>
             <div className="heartContainer">
-              <Favorite className="heartIcon" />
+              <Favorite className="heartIcon" onClick={likeHandler} />
             </div>
-            <span className="postLikeCounter">32 people liked it</span>
+            <span className="postLikeCounter">{like} people liked it</span>
           </div>
           <div className="bottomRight">
-            <span className="postCommentText">9 comments</span>
+            <span className="postCommentText">{post.comment} comments</span>
           </div>
         </PostBottom>
       </PostContainer>
@@ -127,11 +136,11 @@ const PostBottom = styled.div`
       }
     }
     .postLikeCounter {
-        font-size: 15px;
+      font-size: 15px;
     }
   }
   .postCommentText {
-      border-bottom: 1px dashed gray;
-      cursor: pointer;
+    border-bottom: 1px dashed gray;
+    cursor: pointer;
   }
 `;

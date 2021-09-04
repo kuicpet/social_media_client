@@ -10,7 +10,7 @@ export default function Navbar() {
       </LeftContainer>
       <CenterContainer>
         <div className="searchBar">
-          <Search className='searchIcon' />
+          <Search className="searchIcon" />
           <input
             className="searchInput"
             type="text"
@@ -51,6 +51,7 @@ const Wrapper = styled.div`
   align-items: center;
   position: sticky;
   top: 0;
+  z-index: 10;
 `;
 const LeftContainer = styled.div`
   flex: 3;
@@ -73,15 +74,15 @@ const CenterContainer = styled.div`
     align-items: center;
   }
   .searchIcon {
-      font-size: 20px;
-      margin-left: 5px;
+    font-size: 20px;
+    margin-left: 5px;
   }
   .searchInput {
-      border: none;
-      width: 70%;
-      & :focus {
-          outline: none;
-      }
+    border: none;
+    width: 70%;
+    & :focus {
+      outline: none;
+    }
   }
 `;
 const RightContainer = styled.div`
@@ -91,31 +92,31 @@ const RightContainer = styled.div`
   justify-content: space-around;
   color: white;
   .link {
-      margin-right: 10px;
-      font-size: 14px;
-      cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+    cursor: pointer;
   }
   .icons {
-      display: flex;
+    display: flex;
   }
   .iconItem {
-      margin-right: 15px;
-      cursor: pointer;
-      position: relative;
-      .iconBadge {
-          width: 15px;
-          height: 15px;
-          background-color: red;
-          border-radius: 50%;
-          color: white;
-          position: absolute;
-          top: -5px;
-          right: -5px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 12px;
-      }
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+    .iconBadge {
+      width: 15px;
+      height: 15px;
+      background-color: red;
+      border-radius: 50%;
+      color: white;
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
   }
   .profileImg {
     width: 32px;

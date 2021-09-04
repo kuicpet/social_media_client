@@ -11,6 +11,8 @@ import {
   School,
   WorkOutline,
 } from '@material-ui/icons';
+import { Users } from '../dummyData';
+import Friends from './Friends';
 
 export default function Sidebar() {
   return (
@@ -57,94 +59,10 @@ export default function Sidebar() {
         <Button>Show More</Button>
         <hr />
         <ul className="sidebarFriendList">
-          <li className="sidebarFriend">
-            <img
-              src="/assets/kingsley_photo.jpg"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">kingsley</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/kingsley_photo.jpg"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">kingsley</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/kingsley_photo.jpg"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">kingsley</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/kingsley_photo.jpg"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">kingsley</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/kingsley_photo.jpg"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">kingsley</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/kingsley_photo.jpg"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">kingsley</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/kingsley_photo.jpg"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">kingsley</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/kingsley_photo.jpg"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">kingsley</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/kingsley_photo.jpg"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">kingsley</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/kingsley_photo.jpg"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">kingsley</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              src="/assets/kingsley_photo.jpg"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">kingsley</span>
-          </li>
+          {Users.map((user) => (
+            <Friends key={user.id} user={user}/>
+          ))}
+          
         </ul>
       </SidebarContainer>
     </Wrapper>
@@ -155,6 +73,8 @@ const Wrapper = styled.div`
   flex: 3;
   height: calc(100vh - 50px);
   overflow-y: scroll;
+  position: sticky;
+  top: 50px;
   ::-webkit-scrollbar {
     width: 5px;
   }

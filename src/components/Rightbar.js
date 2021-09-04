@@ -1,8 +1,10 @@
 import { Redeem } from '@material-ui/icons';
 import React from 'react';
 import styled from 'styled-components/macro';
+import { Users } from '../dummyData';
+import Online from './Online';
 
-export default function Rightbar() {
+export default function Rightbar({user}) {
   return (
     <Wrapper>
       <RightbarContainer>
@@ -15,116 +17,9 @@ export default function Rightbar() {
         <img src="/assets/kingsley_photo.jpg" alt="" className="rightBarAd" />
         <h4 className="rightBarTitle">Online friends</h4>
         <ul className="friendList">
-          <li className="friend">
-            <div className="friendImgContainer">
-              <img
-                src="/assets/kingsley_photo.jpg"
-                alt=""
-                className="friendProfileImg"
-              />
-              <span className="online"></span>
-            </div>
-            <span className='friendUsername'>John Carter</span>
-          </li>
-          <li className="friend">
-            <div className="friendImgContainer">
-              <img
-                src="/assets/kingsley_photo.jpg"
-                alt=""
-                className="friendProfileImg"
-              />
-              <span className="online"></span>
-            </div>
-            <span className='friendUsername'>John Carter</span>
-          </li>
-          <li className="friend">
-            <div className="friendImgContainer">
-              <img
-                src="/assets/kingsley_photo.jpg"
-                alt=""
-                className="friendProfileImg"
-              />
-              <span className="online"></span>
-            </div>
-            <span className='friendUsername'>John Carter</span>
-          </li>
-          <li className="friend">
-            <div className="friendImgContainer">
-              <img
-                src="/assets/kingsley_photo.jpg"
-                alt=""
-                className="friendProfileImg"
-              />
-              <span className="online"></span>
-            </div>
-            <span className='friendUsername'>John Carter</span>
-          </li>
-          <li className="friend">
-            <div className="friendImgContainer">
-              <img
-                src="/assets/kingsley_photo.jpg"
-                alt=""
-                className="friendProfileImg"
-              />
-              <span className="online"></span>
-            </div>
-            <span className='friendUsername'>John Carter</span>
-          </li>
-          <li className="friend">
-            <div className="friendImgContainer">
-              <img
-                src="/assets/kingsley_photo.jpg"
-                alt=""
-                className="friendProfileImg"
-              />
-              <span className="online"></span>
-            </div>
-            <span className='friendUsername'>John Carter</span>
-          </li>
-          <li className="friend">
-            <div className="friendImgContainer">
-              <img
-                src="/assets/kingsley_photo.jpg"
-                alt=""
-                className="friendProfileImg"
-              />
-              <span className="online"></span>
-            </div>
-            <span className='friendUsername'>John Carter</span>
-          </li>
-          <li className="friend">
-            <div className="friendImgContainer">
-              <img
-                src="/assets/kingsley_photo.jpg"
-                alt=""
-                className="friendProfileImg"
-              />
-              <span className="online"></span>
-            </div>
-            <span className='friendUsername'>John Carter</span>
-          </li>
-          <li className="friend">
-            <div className="friendImgContainer">
-              <img
-                src="/assets/kingsley_photo.jpg"
-                alt=""
-                className="friendProfileImg"
-              />
-              <span className="online"></span>
-            </div>
-            <span className='friendUsername'>John Carter</span>
-          </li>
-          <li className="friend">
-            <div className="friendImgContainer">
-              <img
-                src="/assets/kingsley_photo.jpg"
-                alt=""
-                className="friendProfileImg"
-              />
-              <span className="online"></span>
-            </div>
-            <span className='friendUsername'>John Carter</span>
-          </li>
+          {Users.map((user) => (
+            <Online key={user.id} user={user} />
+          ))}
         </ul>
       </RightbarContainer>
     </Wrapper>
