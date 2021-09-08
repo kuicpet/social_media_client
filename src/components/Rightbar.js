@@ -4,10 +4,10 @@ import styled from 'styled-components/macro';
 import { Users } from '../dummyData';
 import Online from './Online';
 
-export default function Rightbar({profile}) {
-  return (
-    <Wrapper>
-      <RightbarContainer>
+export default function Rightbar({ profile }) {
+  const HomeRightBar = () => {
+    return (
+      <>
         <BirthdayContainer>
           <Redeem className="birthdayImg" htmlColor="red" />
           <span className="birthdayText">
@@ -21,6 +21,86 @@ export default function Rightbar({profile}) {
             <Online key={user.id} user={user} />
           ))}
         </ul>
+      </>
+    );
+  };
+
+  const ProfileRightBar = () => {
+    return (
+      <>
+        <h4 className="rightbarTitle">User Information</h4>
+        <div className="rightbarInfo">
+          <div className="rightbarInfoItem">
+            <span className="rightbarInfoKey">City:</span>
+            <span className="rightbarInfoValue">Akure</span>
+          </div>
+          <div className="rightbarInfoItem">
+            <span className="rightbarInfoKey">From:</span>
+            <span className="rightbarInfoValue">Warri</span>
+          </div>
+          <div className="rightbarInfoItem">
+            <span className="rightbarInfoKey">Relationship:</span>
+            <span className="rightbarInfoValue">Married</span>
+          </div>
+        </div>
+        <h4 className="rightbarTitle">User Friends</h4>
+        <div className="rightbarFollowings">
+          <div className="rightbarFollowing">
+            <img
+              src="/assets/kingsley_photo.jpg"
+              alt=""
+              className="rightbarFollowingImg"
+            />
+            <span className="rightbarFollowingName">John Carter</span>
+          </div>
+          <div className="rightbarFollowing">
+            <img
+              src="/assets/kingsley_photo.jpg"
+              alt=""
+              className="rightbarFollowingImg"
+            />
+            <span className="rightbarFollowingName">John Carter</span>
+          </div>
+          <div className="rightbarFollowing">
+            <img
+              src="/assets/kingsley_photo.jpg"
+              alt=""
+              className="rightbarFollowingImg"
+            />
+            <span className="rightbarFollowingName">John Carter</span>
+          </div>
+          <div className="rightbarFollowing">
+            <img
+              src="/assets/kingsley_photo.jpg"
+              alt=""
+              className="rightbarFollowingImg"
+            />
+            <span className="rightbarFollowingName">John Carter</span>
+          </div>
+          <div className="rightbarFollowing">
+            <img
+              src="/assets/kingsley_photo.jpg"
+              alt=""
+              className="rightbarFollowingImg"
+            />
+            <span className="rightbarFollowingName">John Carter</span>
+          </div>
+          <div className="rightbarFollowing">
+            <img
+              src="/assets/kingsley_photo.jpg"
+              alt=""
+              className="rightbarFollowingImg"
+            />
+            <span className="rightbarFollowingName">John Carter</span>
+          </div>
+        </div>
+      </>
+    );
+  };
+  return (
+    <Wrapper>
+      <RightbarContainer>
+        <ProfileRightBar />
       </RightbarContainer>
     </Wrapper>
   );
@@ -71,6 +151,42 @@ const RightbarContainer = styled.div`
     top: -2px;
     right: 0;
     border: 2px solid white;
+  }
+  .rightbarInfo {
+    margin-bottom: 30px;
+  }
+  .rightbarInfoItem {
+    margin-bottom: 10px;
+  }
+  .rightbarInfoKey {
+    font-weight: 500;
+    margin-right: 10px;
+    color: #555;
+  }
+  .rightbarInfoValue {
+    font-weight: 300;
+  }
+  .rightbarFollowings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .rightbarFollowing {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  .rightbarTitle {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .rightbarFollowingImg {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
   }
 `;
 const BirthdayContainer = styled.div`
