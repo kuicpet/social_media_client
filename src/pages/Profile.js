@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import Feed from '../components/Feed';
 import Navbar from '../components/Navbar';
 import Rightbar from '../components/Rightbar';

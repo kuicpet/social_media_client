@@ -1,9 +1,11 @@
 import './App.css';
-//import Home from './pages/home/Home';
-import Profile from './pages/Profile';
+//import Login from './components/Login';
+//import Register from './components/Register';
+import Home from './pages/home/Home';
+// import Profile from './pages/Profile';
 
 function App() {
-  return <Profile/>;
+  return <Home/>;
 }
 
 export default App;
